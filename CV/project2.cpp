@@ -30,7 +30,6 @@ public:
 			}
 		}
 		
-		cout << count << endl;
 		return (count > 600);
 	}
 
@@ -45,11 +44,12 @@ public:
 	}
 
 	void generateAverageImage() {
-		if (cnt < 100) {
-			cout << "added" << endl;
+
+		if (cnt > 6) {
 			add(gray / cnt, background * (cnt - 1) / cnt, background);
-			cnt++;
+			cnt = 0;
 		}
+		cnt++;
 		
 	}
 
@@ -124,6 +124,6 @@ public:
 };
 
 int main() {
-	VideoManager videomanager = VideoManager("source/Project2.mp4");
+	VideoManager videomanager = VideoManager("source/project2-test.mp4");
 	videomanager.play();
 }
